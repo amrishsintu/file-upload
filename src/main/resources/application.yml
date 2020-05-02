@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: local
+  h2:
+    console:
+      enabled:  true
+
+server:
+  servlet:
+    context-path: /file-upload
+ 
+
+---
+
+spring:
+  profiles: local
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+      
+file:
+  upload-dir: ./upload 	
+ 
+server:
+  port: 8080
+   
